@@ -1,5 +1,5 @@
-@import "./colors.css";
 @import "./base.css";
+@import "./colors.css";
 @import "./utilities.css";
 
 @import "./components/app-grid.css";
