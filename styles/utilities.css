@@ -21,3 +21,15 @@
 .bg-hotpink {
   background-color: hotpink;
 }
+
+.center {
+  text-align: center;
+}
+
+.no-bul {
+  list-style: none;
+}
+
+.inline {
+  display: inline-block;
+}
