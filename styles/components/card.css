@@ -9,7 +9,8 @@
 }
 
 .card__bookmark {
-  background-color: var(--dark-orange);
+  background-color: transparent;
+  border: none;
   width: 30px;
   height: 50px;
   position: absolute;
@@ -17,7 +18,22 @@
   right: 10px;
 }
 
-.card__bookmark:active {
+.card__bookmark-btn {
+  background-color: var(--dark-orange);
+}
+
+.card__bookmark:focus {
+  background-color: var(--blue);
+}
+
+.card__answer {
+  border-radius: 30px;
+  background-color: var(--dark-orange);
+  display: inline-block;
+  padding: 3px 5px;
+}
+
+.card__answer:focus {
   background-color: var(--blue);
 }
 
@@ -29,6 +45,13 @@
 
 .card__tags--style {
   background-color: var(--dark-orange);
+  padding: 3px 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.card__tags--style:hover {
+  background-color: var(--light-orange);
   padding: 3px 10px;
   margin: 5px;
   border-radius: 5px;

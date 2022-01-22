@@ -3,8 +3,15 @@
   grid-template-rows: 48px 1fr 48px;
 }
 
-.app-grid__fixed--color {
+.app-grid__fixed-top {
   background-color: var(--orange);
+  position: sticky;
+  top: 0px;
+}
+.app-grid__fixed-btn {
+  background-color: var(--orange);
+  position: sticky;
+  bottom: 0px;
 }
 
 .app-grid__scrollarea {
