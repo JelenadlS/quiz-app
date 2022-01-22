@@ -1,0 +1,25 @@
+.nav {
+  background-color: var(--orange);
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+
+.nav--display-content {
+  display: contents;
+}
+
+.nav__icon {
+  align-self: flex-end;
+  padding: 0 10px;
+  padding-top: 5px;
+}
+
+.nav__icon:hover {
+  background-color: var(--light-orange);
+}
+
+.nav__icon:active {
+  background-color: var(--dark-orange);
+}
