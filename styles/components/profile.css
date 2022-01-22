@@ -1,0 +1,58 @@
+.profile {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr auto 1fr 1fr;
+}
+
+.profile__img {
+  margin: 0;
+  justify-self: start;
+  align-self: center;
+}
+
+.profile__img--border {
+  border-radius: 50%;
+}
+
+.profile__name {
+  padding-left: 10px;
+  align-self: center;
+}
+
+.profile__about {
+  text-align: justify;
+  grid-column-start: span 2;
+  grid-row-start: 2;
+  align-self: center;
+}
+
+.profile__skills {
+  grid-column-start: span 2;
+  grid-row-start: 3;
+}
+
+.profile__skills-flex {
+  padding-left: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile__skills-flex--style {
+  background-color: var(--dark-orange);
+
+  padding: 3px 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.profile__logout {
+  background-color: var(--blue);
+  width: fit-content;
+  padding: 5px 10px;
+  align-self: center;
+  justify-self: center;
+  grid-column-start: span 2;
+  grid-row-start: 4;
+}
