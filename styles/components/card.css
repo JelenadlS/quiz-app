@@ -1,5 +1,6 @@
 .card {
-  border: 1px solid black;
+  border: 2px solid var(--dark-orange);
+  background-color: var(--orange);
   padding: 2px;
   height: fit-content;
   position: relative;
@@ -8,11 +9,16 @@
 }
 
 .card__bookmark {
+  background-color: var(--dark-orange);
   width: 30px;
   height: 50px;
   position: absolute;
   top: -20px;
   right: 10px;
+}
+
+.card__bookmark:active {
+  background-color: var(--blue);
 }
 
 .card__tags {
@@ -22,7 +28,7 @@
 }
 
 .card__tags--style {
-  border: 1px solid black;
+  background-color: var(--dark-orange);
   padding: 3px 10px;
   margin: 5px;
   border-radius: 5px;
