@@ -2,10 +2,11 @@
   border: 2px solid var(--dark-orange);
   background-color: var(--orange);
   padding: 2px;
+  margin: 10px;
   height: fit-content;
   position: relative;
   display: grid;
-  grid-template-rows: 1fr 2fr auto 1fr;
+  grid-template-rows: repeat(4 auto);
 }
 
 .card__bookmark {
@@ -42,6 +43,7 @@
 }
 
 .card__tags {
+  padding-top: 10px;
   padding-left: 0;
   display: flex;
   justify-content: space-evenly;

@@ -1,5 +1,5 @@
-.h-500 {
-  height: 500px;
+.h-auto {
+  height: auto;
 }
 
 .h-100vh {
@@ -8,6 +8,13 @@
 
 .w-100 {
   width: 100%;
+}
+
+.mgt-10 {
+  margin: 10px;
+}
+.mgb-10 {
+  padding-bottom: 10px;
 }
 
 .center {
