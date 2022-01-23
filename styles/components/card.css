@@ -37,6 +37,10 @@
   background-color: var(--blue);
 }
 
+.card__answer--pointer {
+  cursor: pointer;
+}
+
 .card__tags {
   padding-left: 0;
   display: flex;
