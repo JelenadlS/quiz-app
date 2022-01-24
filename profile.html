@@ -8,40 +8,76 @@
     <link rel="stylesheet" href="./styles/index.css" />
   </head>
   <body>
-    <h1>Profile</h1>
-    <main>
-      <section>
-        <figure><img src="" alt="" width="200" height="200" /></figure>
-        <h2>Name</h2>
-        <p>About myself</p>
-        <h3>Skills</h3>
-        <ul>
-          <li>tag 1</li>
-          <li>tag 2</li>
-          <li>tag 3</li>
-          <li>tag 4</li>
-        </ul>
-        <button>Logout</button>
-      </section>
-
-      <nav>
-        <ul>
-          <li>
-            <a href="./index.html" aria-label="change to quiz-app">Quiz-App</a>
+    <div class="app-grid h-auto">
+      <h1 class="app-grid__fixed-top title">Profile</h1>
+      <main class="app-grid__scrollarea">
+        <div class="h-100vh">
+          <section class="profile">
+            <figure class="profile__img">
+              <img
+                src="./../../Jelena Foto.jpeg"
+                alt=""
+                width="100"
+                height="100"
+                class="profile__img--border"
+              />
+            </figure>
+            <h2 class="profile__name">Jelena de la Sauce</h2>
+            <p class="profile__about pdb-10 mgt-10">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+              reiciendis blanditiis officia ratione! Modi minima aliquam optio
+              deserunt, a expedita rerum delectus recusandae deleniti ex
+              exercitationem accusantium, laboriosam quas ab.
+            </p>
+            <div class="profile__skills mgb-10">
+              <h3>Skills</h3>
+              <ul role="list" class="profile__skills-flex no-bul">
+                <li class="profile__skills-flex--style inline">skill 1</li>
+                <li class="profile__skills-flex--style inline">skill 2</li>
+                <li class="profile__skills-flex--style inline">skill 3</li>
+                <li class="profile__skills-flex--style inline">skill 4</li>
+              </ul>
+            </div>
+            <button class="profile__logout mgt-10">Logout</button>
+          </section>
+        </div>
+      </main>
+      <nav class="app-grid__fixed-btn nav">
+        <ul class="nav--display-content">
+          <li class="no-bul nav__icon">
+            <a href="./index.html" aria-label="change to quiz-app"
+              ><img
+                src="https://www.svgrepo.com/show/69748/white-home.svg"
+                width="32"
+                height="32"
+            /></a>
           </li>
-          <li>
-            <a href="./create.html" aria-label="change to create">Create</a>
+          <li class="no-bul nav__icon">
+            <a href="./create.html" aria-label="change to create"
+              ><img
+                src="https://www.svgrepo.com/show/256788/copy.svg"
+                width="32"
+                height="32"
+            /></a>
           </li>
-          <li>
+          <li class="no-bul nav__icon">
             <a href="./bookmarks.html" aria-label="change to bookmarks"
-              >Bookmarks</a
-            >
+              ><img
+                src="https://www.svgrepo.com/show/141529/bookmark.svg"
+                width="32"
+                height="32"
+            /></a>
           </li>
-          <li>
-            <a href="./profile.html" aria-label="change to profile">Profile</a>
+          <li class="no-bul nav__icon">
+            <a href="./profile.html" aria-label="change to profile"
+              ><img
+                src="https://www.svgrepo.com/show/43426/profile.svg"
+                width="32"
+                height="32"
+            /></a>
           </li>
         </ul>
       </nav>
-    </main>
+    </div>
   </body>
 </html>
