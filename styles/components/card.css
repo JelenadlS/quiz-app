@@ -12,19 +12,19 @@
 .card__bookmark {
   background-color: transparent;
   border: none;
-  width: 30px;
-  height: 50px;
+  width: 40px;
+  height: 60px;
   position: absolute;
-  top: -20px;
+  top: -25px;
   right: 10px;
 }
 
 .card__bookmark-btn {
-  background-color: var(--dark-orange);
+  fill: var(--dark-orange);
 }
 
-.card__bookmark:focus {
-  background-color: var(--blue);
+.card__bookmark--active {
+  fill: var(--blue);
 }
 
 .card__answer {
@@ -34,7 +34,7 @@
   padding: 3px 5px;
 }
 
-.card__answer:focus {
+.card__answer--active {
   background-color: var(--blue);
 }
 
