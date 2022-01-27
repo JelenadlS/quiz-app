@@ -44,11 +44,6 @@
   cursor: pointer;
 }
 
-/*for JS----------------------------------------------*/
-.card__answer--hide {
-  display: none;
-}
-
 .card__tags {
   padding-top: 10px;
   padding-left: 0;
