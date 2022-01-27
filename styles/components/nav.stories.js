@@ -1,8 +1,8 @@
-import html from "./nav.html";
-import "./../../styles/utilities.css";
+import html from './nav.html';
+import './../../styles/utilities.css';
 
 export default {
-  title: "Components/nav",
+  title: 'Components/nav',
 };
 
 export const Default = () => html;

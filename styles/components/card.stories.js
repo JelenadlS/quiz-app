@@ -1,8 +1,8 @@
-import html from "./card.html";
-import "./../../styles/utilities.css";
+import html from './card.html';
+import './../../styles/utilities.css';
 
 export default {
-  title: "Components/card",
+  title: 'Components/card',
 };
 
 export const Default = () => html;
