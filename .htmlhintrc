@@ -1,7 +1,7 @@
 {
   "tagname-lowercase": true,
-  "attr-value-not-empty": false,
   "attr-lowercase": true,
+  "attr-value-not-empty": false,
   "attr-value-double-quotes": true,
   "doctype-first": false,
   "tag-pair": true,

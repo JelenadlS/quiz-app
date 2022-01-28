@@ -1,5 +1,4 @@
-name: npm Test
-
+name: npm test
 on: [push, pull_request]
 
 jobs:
@@ -16,4 +15,4 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - run: npm run build --if-present
-      - run: npm testg
+      - run: npm test
