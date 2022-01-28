@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz App Start</title>
     <link rel="stylesheet" href="./styles/index.css" />
-    <script defer src="/javascript.js"></script>
+    <script type="module" defer src="./index.js"></script>
   </head>
   <body>
     <div class="app-grid h-auto">
       <h1 class="app-grid__fixed-top title">Quiz App</h1>
       <main class="app-grid__scrollarea">
         <div class="h-100vh">
-          <article class="card">
+          <article data-js="card" class="card">
             <button data-js="button-toggle" class="card__bookmark">
               <svg
                 data-js="bookmark"

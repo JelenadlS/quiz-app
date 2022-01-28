@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz App Create</title>
     <link rel="stylesheet" href="./styles/index.css" />
-    <script defer src="/javascript.js"></script>
+    <script type="module" defer src="./index.js"></script>
   </head>
   <body>
     <div class="app-grid h-auto">
@@ -14,6 +14,7 @@
       <main class="app-grid__scrollarea">
         <div class="h-100vh">
           <form
+            data-js="create"
             class="create"
             aria-labelledby="create-question-heading"
             autocomplete="off"
@@ -32,7 +33,7 @@
             <output
               data-js="characters-question"
               class="create__remaining--question"
-              >150</output
+              >150 characters remaining</output
             >
             <label class="create__label" for="input-answer"
               >Let us know your answer:</label
@@ -49,7 +50,7 @@
             <output
               data-js="characters-answer"
               class="create__remaining--answer"
-              >400</output
+              >400 characters remaining</output
             >
             <label class="create__label" for="input-tags"
               >Please name tags:
