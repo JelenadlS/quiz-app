@@ -3,6 +3,7 @@
   display: grid;
   grid-template-rows: repeat (3, auto 1fr) 1fr;
   justify-items: start;
+  position: relative;
 }
 
 .create__label {
@@ -15,6 +16,20 @@
   border: 2px solid var(--dark-orange);
   border-radius: 4px;
   background-color: var(--light-orange);
+}
+
+.create__remaining--question {
+  position: absolute;
+  right: 10px;
+  top: 90px;
+  font-size: 12px;
+}
+
+.create__remaining--answer {
+  position: absolute;
+  right: 10px;
+  top: 205px;
+  font-size: 12px;
 }
 
 .create__button {
