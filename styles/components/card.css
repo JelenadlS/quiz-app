@@ -3,6 +3,7 @@
   background-color: var(--orange);
   padding: 2px;
   margin: 10px;
+  margin-top: 20px;
   height: fit-content;
   position: relative;
   display: grid;
