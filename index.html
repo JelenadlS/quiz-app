@@ -12,7 +12,7 @@
     <div class="app-grid h-auto">
       <h1 class="app-grid__fixed-top title">Quiz App</h1>
       <main class="app-grid__scrollarea h-100vh">
-        <div data-js="home-content">
+        <div data-page="home">
           <article data-js="card" class="card">
             <button data-js="button-toggle" class="card__bookmark">
               <svg
@@ -92,7 +92,7 @@
             </ul>
           </article>
         </div>
-        <div data-js="create-content" class="hide">
+        <div data-page="create" class="hide">
           <form
             class="create"
             aria-labelledby="create-question-heading"
@@ -149,7 +149,7 @@
             />
           </form>
         </div>
-        <div data-js="bookmark-content" class="hide">
+        <div data-page="bookmark" class="hide">
           <article data-js="card" class="card">
             <button data-js="button-toggle" class="card__bookmark">
               <svg
@@ -190,7 +190,7 @@
             </ul>
           </article>
         </div>
-        <div data-js="profile-content" class="hide">
+        <div data-page="profile" class="hide">
           <section class="profile">
             <figure class="profile__img">
               <img
@@ -223,36 +223,40 @@
       </main>
       <nav class="app-grid__fixed-btn nav">
         <ul class="nav--display-content">
-          <li data-js="home-button" class="no-bul nav__icon">
+          <li class="no-bul nav__icon">
             <img
               src="https://www.svgrepo.com/show/69748/white-home.svg"
               alt="Home Button"
               width="32"
               height="32"
+              data-nav="home"
             />
           </li>
-          <li data-js="create-button" class="no-bul nav__icon">
+          <li class="no-bul nav__icon">
             <img
               src="https://www.svgrepo.com/show/256788/copy.svg"
               alt="Create Button"
               width="32"
               height="32"
+              data-nav="create"
             />
           </li>
-          <li data-js="bookmark-button" class="no-bul nav__icon">
+          <li class="no-bul nav__icon">
             <img
               src="https://www.svgrepo.com/show/141529/bookmark.svg"
               alt="Bookmarks Button"
               width="32"
               height="32"
+              data-nav="bookmark"
             />
           </li>
-          <li data-js="profile-button" class="no-bul nav__icon">
+          <li class="no-bul nav__icon">
             <img
               src="https://www.svgrepo.com/show/43426/profile.svg"
               alt="Profile Button"
               width="32"
               height="32"
+              data-nav="profile"
             />
           </li>
         </ul>
