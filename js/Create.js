@@ -1,4 +1,4 @@
-export default function Create(createElement) {
+export default function Create() {
   const textQuestion = document.querySelector('[data-js="text-question"]');
   const charactersLeftQuestion = document.querySelector(
     '[data-js="characters-question"]'
