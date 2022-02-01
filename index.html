@@ -6,27 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz App Start</title>
     <link rel="stylesheet" href="./styles/index.css" />
+    <script type="module" defer src="./index.js"></script>
   </head>
   <body>
     <div class="app-grid h-auto">
       <h1 class="app-grid__fixed-top title">Quiz App</h1>
-      <main class="app-grid__scrollarea">
-        <div class="h-100vh">
-          <article class="card">
-            <button class="card__bookmark card__bookmark:active">
-              <img
-                style="
-                  width: 100%;
-                  height: auto;
-                  float: left;
-                  background-image: none;
-                "
-                src="//pic.onlinewebfonts.com/svg/img_414212.png"
+      <main class="app-grid__scrollarea h-100vh">
+        <div data-page="home">
+          <article data-js="card" class="card">
+            <button data-js="button-toggle" class="card__bookmark">
+              <svg
+                data-js="bookmark"
                 class="card__bookmark-btn"
-                alt="Icon Bookmark"
-                width="500"
-                height="500"
-              />
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 384 512"
+              >
+                <path
+                  d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"
+                />
+              </svg>
             </button>
             <h2 class="pdb-10">Question 1</h2>
             <p class="center pdb-10">
@@ -35,17 +33,18 @@
               commodi nostrum, et cupiditate quisquam iure recusandae non autem
               alias? Fugit!
             </p>
-            <details class="center">
-              <summary class="card__answer card__answer--pointer">
-                show answer
-              </summary>
-              <p class="mgt-10">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
-                natus modi culpa necessitatibus doloribus nam deserunt enim
-                nostrum recusandae beatae earum eveniet eius corporis quia.
-                Iusto quasi totam aut? Ducimus?
-              </p>
-            </details>
+            <button
+              data-js="show-answer"
+              class="card__answer card__answer--pointer"
+            >
+              Show answer
+            </button>
+            <p data-js="hide-answer" class="center mgt-10 hide">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
+              natus modi culpa necessitatibus doloribus nam deserunt enim
+              nostrum recusandae beatae earum eveniet eius corporis quia. Iusto
+              quasi totam aut? Ducimus?
+            </p>
             <ul role="list" class="card__tags no-bul">
               <li class="inline card__tags--style">tag 1</li>
               <li class="inline card__tags--style">tag 2</li>
@@ -53,21 +52,18 @@
               <li class="inline card__tags--style">tag 4</li>
             </ul>
           </article>
-          <article class="card">
-            <button class="card__bookmark card__bookmark:active">
-              <img
-                style="
-                  width: 100%;
-                  height: auto;
-                  float: left;
-                  background-image: none;
-                "
-                src="//pic.onlinewebfonts.com/svg/img_414212.png"
+          <article data-js="card" class="card">
+            <button data-js="button-toggle" class="card__bookmark">
+              <svg
+                data-js="bookmark"
                 class="card__bookmark-btn"
-                alt="Icon Bookmark"
-                width="500"
-                height="500"
-              />
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 384 512"
+              >
+                <path
+                  d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"
+                />
+              </svg>
             </button>
             <h2 class="pdb-10">Question 2</h2>
             <p class="center pdb-10">
@@ -76,17 +72,18 @@
               commodi nostrum, et cupiditate quisquam iure recusandae non autem
               alias? Fugit!
             </p>
-            <details class="center">
-              <summary class="card__answer card__answer--pointer">
-                show answer
-              </summary>
-              <p class="mgt-10">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
-                natus modi culpa necessitatibus doloribus nam deserunt enim
-                nostrum recusandae beatae earum eveniet eius corporis quia.
-                Iusto quasi totam aut? Ducimus?
-              </p>
-            </details>
+            <button
+              data-js="show-answer"
+              class="card__answer card__answer--pointer"
+            >
+              Show answer
+            </button>
+            <p data-js="hide-answer" class="center mgt-10 hide">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
+              natus modi culpa necessitatibus doloribus nam deserunt enim
+              nostrum recusandae beatae earum eveniet eius corporis quia. Iusto
+              quasi totam aut? Ducimus?
+            </p>
             <ul role="list" class="card__tags no-bul">
               <li class="inline card__tags--style">tag 1</li>
               <li class="inline card__tags--style">tag 2</li>
@@ -95,44 +92,172 @@
             </ul>
           </article>
         </div>
+        <div data-page="create" class="hide">
+          <form
+            class="create"
+            aria-labelledby="create-question-heading"
+            autocomplete="off"
+          >
+            <label class="create__label" for="input-question"
+              >Let us know your question:</label
+            >
+            <textarea
+              data-js="text-question"
+              class="w-100 create__textfield"
+              id="input-question"
+              required
+              placeholder="What is your question?"
+              maxlength="150"
+            ></textarea>
+            <output
+              data-js="characters-question"
+              class="create__remaining--question"
+              >150 characters remaining</output
+            >
+            <label class="create__label" for="input-answer"
+              >Let us know your answer:</label
+            >
+            <textarea
+              data-js="text-answer"
+              class="w-100 create__textfield"
+              id="input-answer"
+              rows="4"
+              required
+              placeholder="What is the answer?"
+              maxlength="400"
+            ></textarea>
+            <output
+              data-js="characters-answer"
+              class="create__remaining--answer"
+              >400 characters remaining</output
+            >
+            <label class="create__label" for="input-tags"
+              >Please name tags:
+            </label>
+            <input
+              class="w-100 create__textfield"
+              id="input-tags"
+              required
+              placeholder="Tag 1, Tag 2, Tag 3, Tag 4"
+            />
+            <input
+              id="submit"
+              class="create__button"
+              type="submit"
+              name="submit"
+              value="Submit"
+            />
+          </form>
+        </div>
+        <div data-page="bookmark" class="hide">
+          <article data-js="card" class="card">
+            <button data-js="button-toggle" class="card__bookmark">
+              <svg
+                data-js="bookmark"
+                class="card__bookmark-btn"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 384 512"
+              >
+                <path
+                  d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"
+                />
+              </svg>
+            </button>
+            <h2 class="pdb-10">Question 1</h2>
+            <p class="center pdb-10">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
+              sapiente a quis illum repudiandae fugiat rem, assumenda omnis, qui
+              commodi nostrum, et cupiditate quisquam iure recusandae non autem
+              alias? Fugit!
+            </p>
+            <button
+              data-js="show-answer"
+              class="card__answer card__answer--pointer"
+            >
+              Show answer
+            </button>
+            <p data-js="hide-answer" class="center mgt-10 hide">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
+              natus modi culpa necessitatibus doloribus nam deserunt enim
+              nostrum recusandae beatae earum eveniet eius corporis quia. Iusto
+              quasi totam aut? Ducimus?
+            </p>
+            <ul role="list" class="card__tags no-bul">
+              <li class="inline card__tags--style">tag 1</li>
+              <li class="inline card__tags--style">tag 2</li>
+              <li class="inline card__tags--style">tag 3</li>
+              <li class="inline card__tags--style">tag 4</li>
+            </ul>
+          </article>
+        </div>
+        <div data-page="profile" class="hide">
+          <section class="profile">
+            <figure class="profile__img">
+              <img
+                src="./../../Jelena Foto.jpeg"
+                alt=""
+                width="100"
+                height="100"
+                class="profile__img--border"
+              />
+            </figure>
+            <h2 class="profile__name">Jelena de la Sauce</h2>
+            <p class="profile__about pdb-10 mgt-10">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+              reiciendis blanditiis officia ratione! Modi minima aliquam optio
+              deserunt, a expedita rerum delectus recusandae deleniti ex
+              exercitationem accusantium, laboriosam quas ab.
+            </p>
+            <div class="profile__skills mgb-10">
+              <h3>Skills</h3>
+              <ul role="list" class="profile__skills-flex no-bul">
+                <li class="profile__skills-flex--style inline">skill 1</li>
+                <li class="profile__skills-flex--style inline">skill 2</li>
+                <li class="profile__skills-flex--style inline">skill 3</li>
+                <li class="profile__skills-flex--style inline">skill 4</li>
+              </ul>
+            </div>
+            <button class="profile__logout mgt-10">Logout</button>
+          </section>
+        </div>
       </main>
       <nav class="app-grid__fixed-btn nav">
         <ul class="nav--display-content">
           <li class="no-bul nav__icon">
-            <a href="./index.html" aria-label="change to quiz-app"
-              ><img
-                src="https://www.svgrepo.com/show/69748/white-home.svg"
-                alt="Home Button"
-                width="32"
-                height="32"
-            /></a>
+            <img
+              src="https://www.svgrepo.com/show/69748/white-home.svg"
+              alt="Home Button"
+              width="32"
+              height="32"
+              data-nav="home"
+            />
           </li>
           <li class="no-bul nav__icon">
-            <a href="./create.html" aria-label="change to create"
-              ><img
-                src="https://www.svgrepo.com/show/256788/copy.svg"
-                alt="Create Button"
-                width="32"
-                height="32"
-            /></a>
+            <img
+              src="https://www.svgrepo.com/show/256788/copy.svg"
+              alt="Create Button"
+              width="32"
+              height="32"
+              data-nav="create"
+            />
           </li>
           <li class="no-bul nav__icon">
-            <a href="./bookmarks.html" aria-label="change to bookmarks"
-              ><img
-                src="https://www.svgrepo.com/show/141529/bookmark.svg"
-                alt="Bookmarks Button"
-                width="32"
-                height="32"
-            /></a>
+            <img
+              src="https://www.svgrepo.com/show/141529/bookmark.svg"
+              alt="Bookmarks Button"
+              width="32"
+              height="32"
+              data-nav="bookmark"
+            />
           </li>
           <li class="no-bul nav__icon">
-            <a href="./profile.html" aria-label="change to profile"
-              ><img
-                src="https://www.svgrepo.com/show/43426/profile.svg"
-                alt="Profile Button"
-                width="32"
-                height="32"
-            /></a>
+            <img
+              src="https://www.svgrepo.com/show/43426/profile.svg"
+              alt="Profile Button"
+              width="32"
+              height="32"
+              data-nav="profile"
+            />
           </li>
         </ul>
       </nav>
