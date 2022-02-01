@@ -4,8 +4,8 @@ export default function Nav() {
 
   allNavIcons.forEach((clickedIcon) => {
     clickedIcon.addEventListener('click', (event) => {
-      allPages.forEach((otherPages) => {
-        otherPages.classList.add('hide');
+      allPages.forEach((pages) => {
+        pages.classList.add('hide');
       });
       const iconAttribute = event.target.getAttribute('data-nav');
       const associatedPage = document.querySelector(
