@@ -2,9 +2,9 @@
 @import './colors.css';
 @import './utilities.css';
 
-@import './components/app-grid.css';
-@import './components/card.css';
-@import './components/nav.css';
-@import './components/create.css';
-@import './components/title.css';
-@import './components/profile.css';
+@import '../components/app-grid.css';
+@import '../components/card.css';
+@import '../components/nav.css';
+@import '../components/create.css';
+@import '../components/title.css';
+@import '../components/profile.css';

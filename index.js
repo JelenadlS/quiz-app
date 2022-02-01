@@ -1,6 +1,6 @@
-import Card from './js/Card.js';
-import Create from './js/Create.js';
-import Nav from './js/Navigation.js';
+import Card from './components/Card.js';
+import Create from './components/Create.js';
+import Nav from './components/Nav.js';
 
 const allCardElements = document.querySelectorAll('[data-js="card"]');
 
