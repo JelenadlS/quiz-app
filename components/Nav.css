@@ -13,14 +13,15 @@
 
 .Nav__icon {
   align-self: flex-end;
-  padding: 0 10px;
-  padding-top: 5px;
+  margin: 5px 20px;
+  padding: 10px;
 }
 
-.Nav__icon--active {
+.Nav__icon:hover {
   background-color: var(--light-orange);
 }
 
-.Nav__icon:active {
+.Nav__icon--active {
   background-color: var(--dark-orange);
+  border-radius: 5px;
 }
