@@ -11,21 +11,18 @@
 }
 
 .card__bookmark {
-  background-color: transparent;
-  border: none;
-  width: 40px;
-  height: 60px;
+  all: unset;
   position: absolute;
-  top: -25px;
+  height: 10px;
   right: 10px;
-}
-
-.card__bookmark-btn {
-  fill: var(--dark-orange);
+  top: -5px;
+  border: 15px solid var(--dark-orange);
+  border-bottom-color: transparent;
 }
 
 .card__bookmark--active {
-  fill: var(--blue);
+  border-color: var(--blue);
+  border-bottom-color: transparent;
 }
 
 .card__answer {
