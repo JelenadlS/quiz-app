@@ -20,15 +20,15 @@
 
 .create__remaining--question {
   position: absolute;
-  right: 10px;
-  top: 90px;
+  right: 7px;
+  top: 105px;
   font-size: 12px;
 }
 
 .create__remaining--answer {
   position: absolute;
-  right: 10px;
-  top: 205px;
+  right: 7px;
+  top: 254px;
   font-size: 12px;
 }
 

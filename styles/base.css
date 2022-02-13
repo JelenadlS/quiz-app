@@ -3,8 +3,10 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
+  font-family: 'Hind Siliguri', sans-serif;
 }
 
 body {
   background-color: none;
+  color: var(--text);
 }
