@@ -9,8 +9,14 @@ export default function Create() {
   );
   const cardsContainer = document.querySelector('[data-js=cards]');
   const form = document.querySelector('[data-js=form]');
+  const filterForm = document.querySelector('[data-js=filter-form]');
+  const tagFieldset = filterForm.querySelector('fieldset');
 
   let cards = [];
+  let currentFilter = 'all';
+
+  renderCards();
+  addTagsToFilter();
 
   textQuestion.addEventListener('input', () => {
     const textLength = textQuestion.value.length;
@@ -52,18 +58,28 @@ export default function Create() {
     };
 
     cards = [newCard, ...cards];
-    renderCards();
 
+    filterForm.addEventListener('change', () => {
+      currentFilter = filterForm.elements['tag-filter'].value;
+      renderCards();
+    });
+
+    renderCards();
+    addTagsToFilter();
     form.reset();
   });
 
   function renderCards() {
     cardsContainer.ariaBusy = 'true';
     cardsContainer.innerHTML = '';
-    cards.forEach((card, index) => {
-      const cardElement = document.createElement('li');
-      cardElement.className = 'card';
-      cardElement.innerHTML = `
+    cards
+      .filter(
+        (card) => card.tags.includes(currentFilter) || currentFilter === 'all'
+      )
+      .forEach((card, index) => {
+        const cardElement = document.createElement('li');
+        cardElement.className = 'card';
+        cardElement.innerHTML = `
         <p class="center pdb-10">${card.question}</p>
         <button 
         class="card__bookmark${
@@ -80,34 +96,71 @@ export default function Create() {
       class="card__answer card__answer--pointer"
     >Show answer</button>
     <p id="answer${index}" data-js="answer" hidden class="center mgt-10">${
-        card.answer
-      }</p>
+          card.answer
+        }</p>
         <ul role="list" class="card__tags no-bul">
           ${card.tags
             .map((tag) => `<li class="inline card__tags--style">${tag}</li>`)
             .join('')}
         </ul>
       `;
-      cardsContainer.append(cardElement);
+        cardsContainer.append(cardElement);
 
-      const bookmarkElement = cardElement.querySelector('[data-js=bookmark]');
+        const bookmarkElement = cardElement.querySelector('[data-js=bookmark]');
 
-      bookmarkElement.addEventListener('click', () => {
-        card.isBookmarked = !card.isBookmarked;
-        bookmarkElement.classList.toggle('card__bookmark--active');
-        bookmarkElement.setAttribute('aria-pressed', card.isBookmarked);
+        bookmarkElement.addEventListener('click', () => {
+          card.isBookmarked = !card.isBookmarked;
+          bookmarkElement.classList.toggle('card__bookmark--active');
+          bookmarkElement.setAttribute('aria-pressed', card.isBookmarked);
+        });
+
+        const answerButton = cardElement.querySelector('[data-js=card-button]');
+        const answerElement = cardElement.querySelector('[data-js=answer]');
+
+        answerButton.addEventListener('click', () => {
+          answerElement.toggleAttribute('hidden');
+          const oldExpandedState = answerButton.getAttribute('aria-expanded');
+          const newExpandedState =
+            oldExpandedState === 'true' ? 'false' : 'true';
+          answerButton.setAttribute('aria-expanded', newExpandedState);
+        });
       });
-
-      const answerButton = cardElement.querySelector('[data-js=card-button]');
-      const answerElement = cardElement.querySelector('[data-js=answer]');
-
-      answerButton.addEventListener('click', () => {
-        answerElement.toggleAttribute('hidden');
-        const oldExpandedState = answerButton.getAttribute('aria-expanded');
-        const newExpandedState = oldExpandedState === 'true' ? 'false' : 'true';
-        answerButton.setAttribute('aria-expanded', newExpandedState);
-      });
-    });
     cardsContainer.ariaBusy = 'false';
+  }
+
+  function addTagsToFilter() {
+    tagFieldset.innerHTML = '';
+    const legendElement = document.createElement('legend');
+    legendElement.innerHTML = 'Filter by tags:';
+    tagFieldset.append(legendElement);
+
+    const uniqueTags = cards.reduce((acc, card) => {
+      card.tags.forEach((tag) => {
+        if (!acc.includes(tag)) {
+          acc.push(tag);
+        }
+      });
+      return acc;
+    }, []);
+
+    const sortedTags = [...uniqueTags].sort();
+
+    ['all', ...sortedTags].forEach((tag, index) => {
+      const inputElement = document.createElement('input');
+      inputElement.name = 'tag-filter';
+      inputElement.type = 'radio';
+      inputElement.value = tag;
+      inputElement.style.marginRight = '2px';
+      inputElement.id = 'tag-' + tag;
+      inputElement.checked = index === 0;
+
+      const labelElement = document.createElement('label');
+      labelElement.htmlFor = 'tag-' + tag;
+      labelElement.style.marginRight = '4px';
+      labelElement.append(inputElement);
+      labelElement.append(tag);
+
+      tagFieldset.append(labelElement);
+    });
   }
 }
