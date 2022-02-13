@@ -7,22 +7,31 @@
     >Let us know your question:</label
   >
   <textarea
+    data-js="text-question"
     class="w-100 create__textfield"
     id="input-question"
     required
     placeholder="What is your question?"
+    maxlength="150"
+  ></textarea>
+  <output data-js="characters-question" class="create__remaining--question"
+    >150 characters remaining</output
   >
-  </textarea>
   <label class="create__label" for="input-answer"
     >Let us know your answer:</label
   >
   <textarea
+    data-js="text-answer"
     class="w-100 create__textfield"
     id="input-answer"
+    rows="4"
     required
     placeholder="What is the answer?"
+    maxlength="400"
+  ></textarea>
+  <output data-js="characters-answer" class="create__remaining--answer"
+    >400 characters remaining</output
   >
-  </textarea>
   <label class="create__label" for="input-tags">Please name tags: </label>
   <input
     class="w-100 create__textfield"
@@ -36,5 +45,6 @@
     type="submit"
     name="submit"
     value="Submit"
+    text="Submit"
   />
 </form>
