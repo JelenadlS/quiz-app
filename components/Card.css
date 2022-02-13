@@ -21,13 +21,15 @@
 }
 
 .card__bookmark--active {
-  border-color: var(--blue);
+  border-color: var(--text);
   border-bottom-color: transparent;
 }
 
 .card__answer {
   border-radius: 30px;
   background-color: var(--dark-orange);
+  border: 1px solid var(--text);
+  color: var(--text);
   display: inline-block;
   padding: 3px 5px;
   width: 10em;
@@ -61,4 +63,9 @@
   padding: 3px 10px;
   margin: 5px;
   border-radius: 5px;
+}
+
+.card-list {
+  list-style: none;
+  padding-left: 0;
 }

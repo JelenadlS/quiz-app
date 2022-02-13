@@ -36,4 +36,6 @@
   margin: 30px;
   justify-self: center;
   background-color: var(--orange);
+  border: 1px solid var(--text);
+  color: var(--text);
 }
