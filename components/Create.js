@@ -12,7 +12,7 @@ export default function Create() {
   const filterForm = document.querySelector('[data-js=filter-form]');
   const tagFieldset = filterForm.querySelector('fieldset');
 
-  let cards = [];
+  let cards = JSON.parse(localStorage.getItem('cards')) || [];
   let currentFilter = 'all';
 
   renderCards();
@@ -58,6 +58,7 @@ export default function Create() {
     };
 
     cards = [newCard, ...cards];
+    localStorage.setItem('cards', JSON.stringify(cards));
 
     filterForm.addEventListener('change', () => {
       currentFilter = filterForm.elements['tag-filter'].value;
@@ -110,6 +111,7 @@ export default function Create() {
 
         bookmarkElement.addEventListener('click', () => {
           card.isBookmarked = !card.isBookmarked;
+          localStorage.setItem('cards', JSON.stringify(cards));
           bookmarkElement.classList.toggle('card__bookmark--active');
           bookmarkElement.setAttribute('aria-pressed', card.isBookmarked);
         });
