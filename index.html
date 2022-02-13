@@ -7,96 +7,45 @@
     <title>Quiz App Start</title>
     <link rel="stylesheet" href="./styles/index.css" />
     <script type="module" defer src="./index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Oswald:wght@300&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="app-grid h-auto">
-      <h1 class="app-grid__fixed-top title">Quiz App</h1>
+      <h1 data-title="home" class="app-grid__fixed-top title">Quiz App</h1>
+      <h1 data-title="create" class="app-grid__fixed-top title hide">Create</h1>
+      <h1 data-title="bookmark" class="app-grid__fixed-top title hide">
+        Bookmark
+      </h1>
+      <h1 data-title="profile" class="app-grid__fixed-top title hide">
+        Profile
+      </h1>
       <main class="app-grid__scrollarea h-100vh">
         <div data-page="home">
-          <article data-js="card" class="card">
-            <button data-js="button-toggle" class="card__bookmark">
-              <svg
-                data-js="bookmark"
-                class="card__bookmark-btn"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 384 512"
-              >
-                <path
-                  d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"
-                />
-              </svg>
-            </button>
-            <h2 class="pdb-10">Question 1</h2>
-            <p class="center pdb-10">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-              sapiente a quis illum repudiandae fugiat rem, assumenda omnis, qui
-              commodi nostrum, et cupiditate quisquam iure recusandae non autem
-              alias? Fugit!
-            </p>
-            <button
-              data-js="show-answer"
-              class="card__answer card__answer--pointer"
-            >
-              Show answer
-            </button>
-            <p data-js="hide-answer" class="center mgt-10 hide">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
-              natus modi culpa necessitatibus doloribus nam deserunt enim
-              nostrum recusandae beatae earum eveniet eius corporis quia. Iusto
-              quasi totam aut? Ducimus?
-            </p>
-            <ul role="list" class="card__tags no-bul">
-              <li class="inline card__tags--style">tag 1</li>
-              <li class="inline card__tags--style">tag 2</li>
-              <li class="inline card__tags--style">tag 3</li>
-              <li class="inline card__tags--style">tag 4</li>
-            </ul>
-          </article>
-          <article data-js="card" class="card">
-            <button data-js="button-toggle" class="card__bookmark">
-              <svg
-                data-js="bookmark"
-                class="card__bookmark-btn"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 384 512"
-              >
-                <path
-                  d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"
-                />
-              </svg>
-            </button>
-            <h2 class="pdb-10">Question 2</h2>
-            <p class="center pdb-10">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-              sapiente a quis illum repudiandae fugiat rem, assumenda omnis, qui
-              commodi nostrum, et cupiditate quisquam iure recusandae non autem
-              alias? Fugit!
-            </p>
-            <button
-              data-js="show-answer"
-              class="card__answer card__answer--pointer"
-            >
-              Show answer
-            </button>
-            <p data-js="hide-answer" class="center mgt-10 hide">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
-              natus modi culpa necessitatibus doloribus nam deserunt enim
-              nostrum recusandae beatae earum eveniet eius corporis quia. Iusto
-              quasi totam aut? Ducimus?
-            </p>
-            <ul role="list" class="card__tags no-bul">
-              <li class="inline card__tags--style">tag 1</li>
-              <li class="inline card__tags--style">tag 2</li>
-              <li class="inline card__tags--style">tag 3</li>
-              <li class="inline card__tags--style">tag 4</li>
-            </ul>
-          </article>
+          <form data-js="filter-form" aria-labeledby="form-heading">
+            <fieldset aria-controls>
+              <legend id="form-heading">Filter by tags:</legend>
+            </fieldset>
+          </form>
+          <ul
+            aria-live="polite"
+            aria-atomic="true"
+            aria-relevant="additions"
+            role="list"
+            class="card-list"
+            data-js="cards"
+          ></ul>
         </div>
         <div data-page="create" class="hide">
           <form
             class="create"
             aria-labelledby="create-question-heading"
             autocomplete="off"
+            data-js="form"
           >
             <label class="create__label" for="input-question"
               >Let us know your question:</label
@@ -108,6 +57,7 @@
               required
               placeholder="What is your question?"
               maxlength="150"
+              name="question"
             ></textarea>
             <output
               data-js="characters-question"
@@ -125,6 +75,7 @@
               required
               placeholder="What is the answer?"
               maxlength="400"
+              name="answer"
             ></textarea>
             <output
               data-js="characters-answer"
@@ -139,57 +90,12 @@
               id="input-tags"
               required
               placeholder="Tag 1, Tag 2, Tag 3, Tag 4"
+              name="tags"
             />
-            <input
-              id="submit"
-              class="create__button"
-              type="submit"
-              name="submit"
-              value="Submit"
-            />
+            <button class="create__button">Submit</button>
           </form>
         </div>
-        <div data-page="bookmark" class="hide">
-          <article data-js="card" class="card">
-            <button data-js="button-toggle" class="card__bookmark">
-              <svg
-                data-js="bookmark"
-                class="card__bookmark-btn"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 384 512"
-              >
-                <path
-                  d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"
-                />
-              </svg>
-            </button>
-            <h2 class="pdb-10">Question 1</h2>
-            <p class="center pdb-10">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-              sapiente a quis illum repudiandae fugiat rem, assumenda omnis, qui
-              commodi nostrum, et cupiditate quisquam iure recusandae non autem
-              alias? Fugit!
-            </p>
-            <button
-              data-js="show-answer"
-              class="card__answer card__answer--pointer"
-            >
-              Show answer
-            </button>
-            <p data-js="hide-answer" class="center mgt-10 hide">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
-              natus modi culpa necessitatibus doloribus nam deserunt enim
-              nostrum recusandae beatae earum eveniet eius corporis quia. Iusto
-              quasi totam aut? Ducimus?
-            </p>
-            <ul role="list" class="card__tags no-bul">
-              <li class="inline card__tags--style">tag 1</li>
-              <li class="inline card__tags--style">tag 2</li>
-              <li class="inline card__tags--style">tag 3</li>
-              <li class="inline card__tags--style">tag 4</li>
-            </ul>
-          </article>
-        </div>
+        <div data-page="bookmark" class="hide"></div>
         <div data-page="profile" class="hide">
           <section class="profile">
             <figure class="profile__img">
@@ -221,9 +127,9 @@
           </section>
         </div>
       </main>
-      <nav class="app-grid__fixed-btn nav">
-        <ul class="nav--display-content">
-          <li class="no-bul nav__icon">
+      <nav class="app-grid__fixed-btn Nav">
+        <ul class="Nav--display-content">
+          <li class="no-bul Nav__icon">
             <img
               src="https://www.svgrepo.com/show/69748/white-home.svg"
               alt="Home Button"
@@ -232,7 +138,7 @@
               data-nav="home"
             />
           </li>
-          <li class="no-bul nav__icon">
+          <li class="no-bul Nav__icon">
             <img
               src="https://www.svgrepo.com/show/256788/copy.svg"
               alt="Create Button"
@@ -241,7 +147,7 @@
               data-nav="create"
             />
           </li>
-          <li class="no-bul nav__icon">
+          <li class="no-bul Nav__icon">
             <img
               src="https://www.svgrepo.com/show/141529/bookmark.svg"
               alt="Bookmarks Button"
@@ -250,7 +156,7 @@
               data-nav="bookmark"
             />
           </li>
-          <li class="no-bul nav__icon">
+          <li class="no-bul Nav__icon">
             <img
               src="https://www.svgrepo.com/show/43426/profile.svg"
               alt="Profile Button"

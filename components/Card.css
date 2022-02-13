@@ -11,26 +11,25 @@
 }
 
 .card__bookmark {
-  background-color: transparent;
-  border: none;
-  width: 40px;
-  height: 60px;
+  all: unset;
   position: absolute;
-  top: -25px;
+  height: 10px;
   right: 10px;
-}
-
-.card__bookmark-btn {
-  fill: var(--dark-orange);
+  top: -5px;
+  border: 15px solid var(--dark-orange);
+  border-bottom-color: transparent;
 }
 
 .card__bookmark--active {
-  fill: var(--blue);
+  border-color: var(--text);
+  border-bottom-color: transparent;
 }
 
 .card__answer {
   border-radius: 30px;
   background-color: var(--dark-orange);
+  border: 1px solid var(--text);
+  color: var(--text);
   display: inline-block;
   padding: 3px 5px;
   width: 10em;
@@ -64,4 +63,9 @@
   padding: 3px 10px;
   margin: 5px;
   border-radius: 5px;
+}
+
+.card-list {
+  list-style: none;
+  padding-left: 0;
 }

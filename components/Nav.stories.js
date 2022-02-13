@@ -1,4 +1,4 @@
-import html from './nav.html';
+import html from './Nav.html';
 import './../../styles/utilities.css';
 
 export default {

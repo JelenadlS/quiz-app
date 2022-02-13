@@ -48,7 +48,9 @@
 }
 
 .profile__logout {
-  background-color: var(--blue);
+  border: 1px solid var(--text);
+  background-color: var(--orange);
+  color: var(--text);
   width: fit-content;
   padding: 5px 10px;
   align-self: center;
